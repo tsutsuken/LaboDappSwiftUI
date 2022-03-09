@@ -15,6 +15,7 @@
 		BEC8FAA227D70FCF00106457 /* LaboDappSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAA127D70FCF00106457 /* LaboDappSwiftUIUITests.swift */; };
 		BEC8FAA427D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */; };
 		BEC8FAB227D7103400106457 /* WalletConnect in Frameworks */ = {isa = PBXBuildFile; productRef = BEC8FAB127D7103400106457 /* WalletConnect */; };
+		BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAB727D8395C00106457 /* WalletManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		BEC8FA9D27D70FCF00106457 /* LaboDappSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaboDappSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8FAA127D70FCF00106457 /* LaboDappSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIUITests.swift; sourceTree = "<group>"; };
 		BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BEC8FAB727D8395C00106457 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */,
 				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
+				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
 				BEC8FA8A27D70FCE00106457 /* Assets.xcassets */,
 				BEC8FA8C27D70FCE00106457 /* Preview Content */,
 			);
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */,
+				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
 				BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,11 +6,42 @@
 //
 
 import SwiftUI
+import WalletConnect
+import WalletConnectUtils
 
 struct ContentView: View {
+    @EnvironmentObject var walletManager: WalletManager
+    
+    private func copyParingUri() {
+        print("copyParingUri")
+        do {
+            if let uri = try walletManager.generateParingUri() {
+                print("uri: \(uri)")
+                UIPasteboard.general.string = uri
+            }
+        } catch {
+            print("generateParingUri error: \(error)")
+        }
+    }
+    
+    private func disconnectWallet() {
+        walletManager.disconnect()
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if walletManager.session == nil {
+                Button("Copy paring uri", action: {
+                    copyParingUri()
+                })
+                    .padding()
+            } else {
+                Button("Disconnect wallet", action: {
+                    disconnectWallet()
+                })
+                    .padding()
+            }
+        }
     }
 }
 
