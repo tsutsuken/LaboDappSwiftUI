@@ -13,6 +13,22 @@ import Relayer
 class WalletManager: ObservableObject {
     @Published private(set) var client: WalletConnectClient
     @Published private(set) var session: Session?
+    @Published private(set) var unconfirmedResponses = [Response]()
+    public var shouldDisplayResponseView: Bool {
+        get {
+            let shouldDisplay = unconfirmedResponses.count > 0
+            print("shouldDisplayResponseView get: \(shouldDisplay)")
+            return shouldDisplay
+        }
+        
+        set(shouldDisplay) {
+            // called when dismissing WalletResponseView
+            print("shouldDisplayResponseView set: \(shouldDisplay)")
+            if shouldDisplay == false {
+                unconfirmedResponses = [Response]()
+            }
+        }
+    }
     public let chainIds = Set(["eip155:137"])
     public let methods = Set(["eth_sendTransaction", "personal_sign"])
     
@@ -116,6 +132,10 @@ extension WalletManager: WalletConnectClientDelegate {
 
     func didReceive(sessionResponse: Response) {
         print("WalletManager didReceive sessionResponse: \(sessionResponse)")
+        DispatchQueue.main.async {
+            self.unconfirmedResponses.append(sessionResponse)
+            print("unconfirmedResponses: \(self.unconfirmedResponses.count)")
+        }
     }
 
     func didUpdate(sessionTopic: String, accounts: Set<Account>) {
