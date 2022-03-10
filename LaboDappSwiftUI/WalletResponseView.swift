@@ -22,9 +22,3 @@ struct WalletResponseView: View {
         }
     }
 }
-
-struct WalletResponseView_Previews: PreviewProvider {
-    static var previews: some View {
-        WalletResponseView(responses: [Response]())
-    }
-}
