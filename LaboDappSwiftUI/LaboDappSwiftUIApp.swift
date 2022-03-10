@@ -17,7 +17,7 @@ struct LaboDappSwiftUIApp: App {
             ContentView()
                 .environmentObject(walletManager)
                 .sheet(isPresented: $walletManager.shouldDisplayResponseView, onDismiss: {}, content: {
-                    WalletResponseView(responses: walletManager.unconfirmedResponses)
+                    WalletResponseView(walletManager: walletManager)
                 })
         }
     }

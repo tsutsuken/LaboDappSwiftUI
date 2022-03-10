@@ -9,13 +9,14 @@ import SwiftUI
 import WalletConnect
 
 struct WalletResponseView: View {
-    @State var responses: [Response]
+    @State var walletManager: WalletManager
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(responses, id: \.topic) { response in
-                    Text("Topic: \(response.topic)")
+                ForEach(walletManager.unconfirmedResponses, id: \.topic) { response in
+                    let record = walletManager.getSessionRequestRecord(id: response.result.id)
+                    Text("Method: \(record?.request.method ?? "") \nTopic: \(response.topic)")
                 }
             }
             .navigationTitle("Response")

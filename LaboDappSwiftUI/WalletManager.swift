@@ -86,6 +86,11 @@ extension WalletManager {
         let request = Request(topic: session.topic, method: method, params: requestParams, chainId: chainId)
         client.request(params: request)
     }
+    
+    public func getSessionRequestRecord(id: Int64) -> WalletConnectUtils.JsonRpcRecord? {
+        let record = client.getSessionRequestRecord(id: id)
+        return record
+    }
 }
 
 // MARK: - Private Functions
