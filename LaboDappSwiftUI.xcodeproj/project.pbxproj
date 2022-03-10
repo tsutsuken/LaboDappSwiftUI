@@ -16,6 +16,7 @@
 		BEC8FAA427D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */; };
 		BEC8FAB227D7103400106457 /* WalletConnect in Frameworks */ = {isa = PBXBuildFile; productRef = BEC8FAB127D7103400106457 /* WalletConnect */; };
 		BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAB727D8395C00106457 /* WalletManager.swift */; };
+		BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABA27D97C2200106457 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BEC8FAA127D70FCF00106457 /* LaboDappSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIUITests.swift; sourceTree = "<group>"; };
 		BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BEC8FAB727D8395C00106457 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
+		BEC8FABA27D97C2200106457 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */,
 				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
 				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
+				BEC8FAB927D97C1200106457 /* Models */,
 				BEC8FA8A27D70FCE00106457 /* Assets.xcassets */,
 				BEC8FA8C27D70FCE00106457 /* Preview Content */,
 			);
@@ -130,6 +133,14 @@
 				BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = LaboDappSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		BEC8FAB927D97C1200106457 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEC8FABA27D97C2200106457 /* Transaction.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 			files = (
 				BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */,
 				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
+				BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */,
 				BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

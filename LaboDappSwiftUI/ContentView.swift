@@ -24,6 +24,10 @@ struct ContentView: View {
         }
     }
     
+    private func sendRequest() {
+        walletManager.sendRequest()
+    }
+    
     private func disconnectWallet() {
         walletManager.disconnect()
     }
@@ -36,6 +40,10 @@ struct ContentView: View {
                 })
                     .padding()
             } else {
+                Button("Send request", action: {
+                    sendRequest()
+                })
+                    .padding()
                 Button("Disconnect wallet", action: {
                     disconnectWallet()
                 })
