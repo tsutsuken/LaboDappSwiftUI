@@ -29,7 +29,7 @@ class WalletManager: ObservableObject {
             }
         }
     }
-    public let chainIds = Set(["eip155:137"])
+    public let chainIds = Set([Chain.mainnetPolygon.chainId])
     public let methods = Set(["eth_sendTransaction", "personal_sign"])
     
     init() {

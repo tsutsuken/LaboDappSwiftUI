@@ -18,6 +18,7 @@
 		BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAB727D8395C00106457 /* WalletManager.swift */; };
 		BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABA27D97C2200106457 /* Transaction.swift */; };
 		BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */; };
+		BEC8FABF27DAD97600106457 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABE27DAD97600106457 /* Chain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BEC8FAB727D8395C00106457 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		BEC8FABA27D97C2200106457 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletResponseView.swift; sourceTree = "<group>"; };
+		BEC8FABE27DAD97600106457 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC8FABA27D97C2200106457 /* Transaction.swift */,
+				BEC8FABE27DAD97600106457 /* Chain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */,
 				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
 				BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */,
+				BEC8FABF27DAD97600106457 /* Chain.swift in Sources */,
 				BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */,
 				BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */,
 			);
