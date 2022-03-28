@@ -24,8 +24,8 @@ struct ContentView: View {
         }
     }
     
-    private func sendRequest() {
-        walletManager.sendRequest()
+    private func sendRequestPersonalSign() {
+        walletManager.sendRequestPersonalSign()
     }
     
     private func disconnectWallet() {
@@ -40,8 +40,8 @@ struct ContentView: View {
                 })
                     .padding()
             } else {
-                Button("Send request", action: {
-                    sendRequest()
+                Button("Send request personal_sign", action: {
+                    sendRequestPersonalSign()
                 })
                     .padding()
                 Button("Disconnect wallet", action: {

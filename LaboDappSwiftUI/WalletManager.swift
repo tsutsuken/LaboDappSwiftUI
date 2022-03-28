@@ -49,6 +49,9 @@ class WalletManager: ObservableObject {
     }
     public let chainIds = Set([Chain.testnetRinkeby.chainId])
     public let methods = Set(["eth_sendTransaction", "personal_sign"])
+    private var selectedChainId: String {
+        return Array(chainIds)[0]
+    }
     
     init() {
         print("WalletManager init")
@@ -92,17 +95,21 @@ extension WalletManager {
         self.session = nil
     }
     
-    public func sendRequest() {
+    public func sendRequestPersonalSign() {
         print("WalletManager sendRequest")
         guard let session = session else {
             return
         }
         
-        let method = Array(methods)[0]
-        let requestParams = getRequestParams(for: method)
-        let chainId = Array(chainIds)[0]
-        let request = Request(topic: session.topic, method: method, params: requestParams, chainId: chainId)
+        guard let address = address else {
+            return
+        }
+        
+        let method = Array(methods)[1]
+        let requestParams = getRequestParams(for: method, myAddress: address)
+        let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
         client.request(params: request)
+        print("WalletManager sendRequest: \(request)")
     }
     
     public func getSessionRequestRecord(id: Int64) -> WalletConnectUtils.JsonRpcRecord? {
@@ -114,13 +121,12 @@ extension WalletManager {
 // MARK: - Private Functions
 
 extension WalletManager {
-    private func getRequestParams(for method: String) -> AnyCodable {
-        let account = "0x9b2055d370f73ec7d8a03e965129118dc8f5bf83"
+    private func getRequestParams(for method: String, myAddress: String) -> AnyCodable {
         if method == "eth_sendTransaction" {
             let tx = Stub.tx
             return AnyCodable(tx)
         } else if method == "personal_sign" {
-            return AnyCodable(["0xdeadbeaf", account])
+            return AnyCodable(["TestSign", address])
         }
         fatalError("not implemented")
     }
