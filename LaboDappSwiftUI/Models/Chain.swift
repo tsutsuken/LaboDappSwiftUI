@@ -11,6 +11,7 @@ enum Chain {
     case mainnetEthereum
     case mainnetPolygon
     case testnetRopsten
+    case testnetRinkeby
     
     var chainId: String {
         switch self {
@@ -20,6 +21,8 @@ enum Chain {
             return "eip155:137"
         case .testnetRopsten:
             return "eip155:3"
+        case .testnetRinkeby:
+            return "eip155:4"
         }
     }
 }
