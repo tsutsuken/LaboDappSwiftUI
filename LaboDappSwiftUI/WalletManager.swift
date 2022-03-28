@@ -14,6 +14,24 @@ class WalletManager: ObservableObject {
     @Published private(set) var client: WalletConnectClient
     @Published private(set) var session: Session?
     @Published private(set) var unconfirmedResponses = [Response]()
+    public var address: String? {
+        guard let session = session else {
+            return nil
+        }
+        
+        guard session.accounts.count > 0 else {
+            return nil
+        }
+        
+        let account = Array(session.accounts)[0]
+        let splits = account.split(separator: ":", omittingEmptySubsequences: false)
+        guard splits.count == 3 else {
+            return nil
+        }
+        
+        let address = String(splits[2])
+        return address
+    }
     public var shouldDisplayResponseView: Bool {
         get {
             let shouldDisplay = unconfirmedResponses.count > 0
