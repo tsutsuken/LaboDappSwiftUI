@@ -47,7 +47,7 @@ class WalletManager: ObservableObject {
             }
         }
     }
-    public let chainIds = Set([Chain.mainnetPolygon.chainId])
+    public let chainIds = Set([Chain.testnetRinkeby.chainId])
     public let methods = Set(["eth_sendTransaction", "personal_sign"])
     
     init() {
