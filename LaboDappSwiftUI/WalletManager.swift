@@ -116,6 +116,24 @@ extension WalletManager {
         let record = client.getSessionRequestRecord(id: id)
         return record
     }
+    
+    public func sessionRequestResponse(record: JsonRpcRecord?) -> String {
+        guard let record = record else {
+            return ""
+        }
+        
+        let encoder = JSONEncoder()
+        let jsonString: String
+        do {
+            let data = try encoder.encode(record)
+            jsonString = String(data: data, encoding: .utf8)!
+        } catch {
+            print(error.localizedDescription)
+            jsonString = error.localizedDescription
+        }
+        print("WalletManager sessionRequestResponse: \(jsonString)")
+        return jsonString
+    }
 }
 
 // MARK: - Private Functions

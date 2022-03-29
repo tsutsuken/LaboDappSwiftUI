@@ -16,7 +16,9 @@ struct WalletResponseView: View {
             List {
                 ForEach(walletManager.unconfirmedResponses, id: \.topic) { response in
                     let record = walletManager.getSessionRequestRecord(id: response.result.id)
-                    Text("Method: \(record?.request.method ?? "") \nTopic: \(response.topic)")
+                    let responseJson = walletManager.sessionRequestResponse(record: record)
+                    
+                    Text("Method: \(record?.request.method ?? "") \nResponse: \(responseJson)")
                 }
             }
             .navigationTitle("Response")
