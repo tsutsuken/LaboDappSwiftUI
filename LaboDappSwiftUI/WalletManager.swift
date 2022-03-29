@@ -112,6 +112,24 @@ extension WalletManager {
         print("WalletManager sendRequest: \(request)")
     }
     
+    public func sendRequestTransferEth() {
+        print("WalletManager sendRequestTransferEth")
+        
+        guard let session = session else {
+            return
+        }
+        
+        guard let address = address else {
+            return
+        }
+        
+        let method = "eth_sendTransaction"
+        let requestParams = getRequestParams(for: method, myAddress: address)
+        let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
+        client.request(params: request)
+        print("WalletManager sendRequestTransferEth: \(request)")
+    }
+    
     public func getSessionRequestRecord(id: Int64) -> WalletConnectUtils.JsonRpcRecord? {
         let record = client.getSessionRequestRecord(id: id)
         return record
@@ -150,13 +168,14 @@ extension WalletManager {
     }
 
     fileprivate enum Stub {
-        static let tx = [Transaction(from: "0x9b2055d370f73ec7d8a03e965129118dc8f5bf83",
-                                    to: "0x9b2055d370f73ec7d8a03e965129118dc8f5bf83",
-                                    data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
-                                    gas: "0x76c0",
-                                    gasPrice: "0x9184e72a000",
-                                    value: "0x9184e72a",
-                                    nonce: "0x117")]
+        static let tx = [Transaction(from: "0xf962d9666517Abd683b32342bC4DCDDEfd40546B",
+                                    to: "0x42b6fC88867383dDd507b40CD6E0DDe32C05891a",
+                                    data: "0x",
+                                    gas: "0x", // autofilled in wallet
+                                    gasPrice: "0x", // autofilled in wallet
+                                    value: "0x5AF3107A4000", // 0.0001eth
+                                    nonce: "0x" // autofilled in wallet
+                                    )]
     }
 }
 
