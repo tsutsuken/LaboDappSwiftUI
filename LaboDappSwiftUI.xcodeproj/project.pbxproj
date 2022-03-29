@@ -81,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE50F17427F3CD5500942EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
+				BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE50F17527F3CD6300942EE6 /* Web3 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
+			);
+			path = Web3;
+			sourceTree = "<group>";
+		};
 		BEC8FA7A27D70FCD00106457 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */,
-				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
-				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
-				BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */,
+				BE50F17427F3CD5500942EE6 /* Views */,
 				BEC8FAB927D97C1200106457 /* Models */,
+				BE50F17527F3CD6300942EE6 /* Web3 */,
 				BEC8FA8A27D70FCE00106457 /* Assets.xcassets */,
 				BEC8FA8C27D70FCE00106457 /* Preview Content */,
 			);
