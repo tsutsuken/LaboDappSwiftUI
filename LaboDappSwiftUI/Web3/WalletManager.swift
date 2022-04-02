@@ -9,6 +9,8 @@ import Foundation
 import WalletConnect
 import WalletConnectUtils
 import Relayer
+import web3
+import BigInt
 
 class WalletManager: ObservableObject {
     @Published private(set) var client: WalletConnectClient
@@ -128,6 +130,38 @@ extension WalletManager {
         let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
         client.request(params: request)
         print("WalletManager sendRequestTransferEth: \(request)")
+    }
+    
+    public func sendRequestTransferLinkToken() {
+        print("WalletManager sendRequestTransferLinkToken")
+        
+        guard let session = session else {
+            return
+        }
+        
+        guard let address = address else {
+            return
+        }
+        
+        let method = "eth_sendTransaction"
+        let chainLinkAddressRinkeby = "0x01BE23585060835E02B77ef475b0Cc51aA1e0709"
+        let function = ERC20Functions.transfer(contract: EthereumAddress(chainLinkAddressRinkeby), from: EthereumAddress(address), to: EthereumAddress("0x42b6fC88867383dDd507b40CD6E0DDe32C05891a"), value: BigUInt(1000000000000000000))
+        guard let transactionData = try? function.transaction().data else {
+            return
+        }
+        
+        let transaction = [Transaction(from: "0xf962d9666517Abd683b32342bC4DCDDEfd40546B",
+                                       to: chainLinkAddressRinkeby, // set contract address
+                                       data: transactionData.web3.hexString,
+                                       gas: "0x", // autofilled in wallet
+                                       gasPrice: "0x", // autofilled in wallet
+                                       value: "0x",
+                                       nonce: "0x" // autofilled in wallet
+                                      )]
+        let requestParams = AnyCodable(transaction)
+        let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
+        client.request(params: request)
+        print("WalletManager sendRequestTransferLinkToken: \(request)")
     }
     
     public func getSessionRequestRecord(id: Int64) -> WalletConnectUtils.JsonRpcRecord? {

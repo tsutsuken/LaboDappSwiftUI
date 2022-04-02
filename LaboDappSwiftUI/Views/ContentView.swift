@@ -32,6 +32,10 @@ struct ContentView: View {
         walletManager.sendRequestTransferEth()
     }
     
+    private func sendRequestTransferLinkToken() {
+        walletManager.sendRequestTransferLinkToken()
+    }
+    
     private func disconnectWallet() {
         walletManager.disconnect()
     }
@@ -50,6 +54,10 @@ struct ContentView: View {
                     .padding()
                 Button("Send request transfer_eth", action: {
                     sendRequestTransferEth()
+                })
+                    .padding()
+                Button("Send request transfer_link", action: {
+                    sendRequestTransferLinkToken()
                 })
                     .padding()
                 Button("Disconnect wallet", action: {
