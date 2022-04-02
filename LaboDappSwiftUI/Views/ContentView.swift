@@ -11,6 +11,11 @@ import WalletConnectUtils
 
 struct ContentView: View {
     @EnvironmentObject var walletManager: WalletManager
+    @State private var isShowingAlertRequestSent = false
+    
+    private func showAlertRequestSent() {
+        isShowingAlertRequestSent = true
+    }
     
     private func copyParingUri() {
         print("copyParingUri")
@@ -50,14 +55,17 @@ struct ContentView: View {
             } else {
                 Button("Send request personal_sign", action: {
                     sendRequestPersonalSign()
+                    showAlertRequestSent()
                 })
                     .padding()
                 Button("Send request transfer_eth", action: {
                     sendRequestTransferEth()
+                    showAlertRequestSent()
                 })
                     .padding()
                 Button("Send request transfer_link", action: {
                     sendRequestTransferLinkToken()
+                    showAlertRequestSent()
                 })
                     .padding()
                 Button("Disconnect wallet", action: {
@@ -65,6 +73,11 @@ struct ContentView: View {
                 })
                     .padding()
             }
+        }
+        .alert(isPresented: $isShowingAlertRequestSent) {
+            Alert(title: Text("Request sent"),
+                  message: Text("Confirm request on connected wallet")
+            )
         }
     }
 }
