@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */; };
+		BE4F860427F950F700833985 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860327F950F700833985 /* ContentViewModel.swift */; };
 		BE50F17A27F4746900942EE6 /* web3.swift in Frameworks */ = {isa = PBXBuildFile; productRef = BE50F17927F4746900942EE6 /* web3.swift */; };
 		BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */; };
 		BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA8827D70FCD00106457 /* ContentView.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkRepository.swift; sourceTree = "<group>"; };
+		BE4F860327F950F700833985 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		BEC8FA8327D70FCD00106457 /* LaboDappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaboDappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIApp.swift; sourceTree = "<group>"; };
 		BEC8FA8827D70FCD00106457 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,10 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE50F17427F3CD5500942EE6 /* Views */ = {
+		BE4F860227F950E600833985 /* Content */ = {
 			isa = PBXGroup;
 			children = (
 				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
+				BE4F860327F950F700833985 /* ContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		BE50F17427F3CD5500942EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE4F860227F950E600833985 /* Content */,
 				BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */,
 			);
 			path = Views;
@@ -98,6 +111,14 @@
 				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
 			);
 			path = Web3;
+			sourceTree = "<group>";
+		};
+		BE50F17C27F92CF200942EE6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		BEC8FA7A27D70FCD00106457 = {
@@ -126,6 +147,7 @@
 				BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */,
 				BE50F17427F3CD5500942EE6 /* Views */,
 				BEC8FAB927D97C1200106457 /* Models */,
+				BE50F17C27F92CF200942EE6 /* Repositories */,
 				BE50F17527F3CD6300942EE6 /* Web3 */,
 				BEC8FA8A27D70FCE00106457 /* Assets.xcassets */,
 				BEC8FA8C27D70FCE00106457 /* Preview Content */,
@@ -305,7 +327,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4F860427F950F700833985 /* ContentViewModel.swift in Sources */,
 				BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */,
+				BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */,
 				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
 				BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */,
 				BEC8FABF27DAD97600106457 /* Chain.swift in Sources */,

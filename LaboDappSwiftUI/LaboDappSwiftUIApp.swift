@@ -14,8 +14,7 @@ struct LaboDappSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(walletManager)
+            ContentView(walletManager: walletManager)
                 .sheet(isPresented: $walletManager.shouldDisplayResponseView, onDismiss: {}, content: {
                     WalletResponseView(walletManager: walletManager)
                 })

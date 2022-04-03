@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
-import WalletConnect
-import WalletConnectUtils
 
 struct ContentView: View {
-    @EnvironmentObject var walletManager: WalletManager
+    @StateObject private var viewModel: ContentViewModel
     @State private var isShowingAlertRequestSent = false
+    
+    init(walletManager: WalletManager) {
+        let viewModel = ContentViewModel(walletManager: walletManager)
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     private func showAlertRequestSent() {
         isShowingAlertRequestSent = true
@@ -20,7 +23,7 @@ struct ContentView: View {
     private func copyParingUri() {
         print("copyParingUri")
         do {
-            if let uri = try walletManager.generateParingUri() {
+            if let uri = try viewModel.walletManager.generateParingUri() {
                 print("uri: \(uri)")
                 UIPasteboard.general.string = uri
             }
@@ -30,24 +33,24 @@ struct ContentView: View {
     }
     
     private func sendRequestPersonalSign() {
-        walletManager.sendRequestPersonalSign()
+        viewModel.walletManager.sendRequestPersonalSign()
     }
     
     private func sendRequestTransferEth() {
-        walletManager.sendRequestTransferEth()
+        viewModel.walletManager.sendRequestTransferEth()
     }
     
     private func sendRequestTransferLinkToken() {
-        walletManager.sendRequestTransferLinkToken()
+        viewModel.transferChainLink()
     }
     
     private func disconnectWallet() {
-        walletManager.disconnect()
+        viewModel.walletManager.disconnect()
     }
     
     var body: some View {
         VStack {
-            if walletManager.session == nil {
+            if viewModel.walletManager.session == nil {
                 Button("Copy paring uri", action: {
                     copyParingUri()
                 })
