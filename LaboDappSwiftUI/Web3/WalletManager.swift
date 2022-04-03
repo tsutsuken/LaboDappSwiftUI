@@ -135,11 +135,7 @@ extension WalletManager {
         
         let transaction = Transaction(from: address,
                                       to: "0x42b6fC88867383dDd507b40CD6E0DDe32C05891a",
-                                      data: "0x",
-                                      gas: "0x", // autofilled in wallet
-                                      gasPrice: "0x", // autofilled in wallet
-                                      value: "0x5AF3107A4000", // 0.0001eth
-                                      nonce: "0x" // autofilled in wallet
+                                      value: "0x5AF3107A4000" // 0.0001eth
         )
         sendTransaction(transaction: transaction)
     }

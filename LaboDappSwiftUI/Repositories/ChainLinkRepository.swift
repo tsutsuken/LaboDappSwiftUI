@@ -33,11 +33,7 @@ class ChainLinkRepository {
         
         let transaction = Transaction(from: "0xf962d9666517Abd683b32342bC4DCDDEfd40546B",
                                       to: chainLinkAddressRinkeby, // set contract address
-                                      data: transactionData.web3.hexString,
-                                      gas: "0x", // autofilled in wallet
-                                      gasPrice: "0x", // autofilled in wallet
-                                      value: "0x",
-                                      nonce: "0x" // autofilled in wallet
+                                      data: transactionData.web3.hexString
         )
         walletManager.sendTransaction(transaction: transaction)
     }
