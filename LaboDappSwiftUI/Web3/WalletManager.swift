@@ -120,8 +120,8 @@ extension WalletManager {
             return
         }
         
-        let method = Array(methods)[1]
-        let requestParams = getRequestParams(for: method, myAddress: address)
+        let method = "personal_sign"
+        let requestParams = AnyCodable(["TestMessage", address])
         let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
         client.request(params: request)
         print("WalletManager sendRequest: \(request)")
@@ -165,31 +165,6 @@ extension WalletManager {
         }
         print("WalletManager sessionRequestResponse: \(jsonString)")
         return jsonString
-    }
-}
-
-// MARK: - Private Functions
-
-extension WalletManager {
-    private func getRequestParams(for method: String, myAddress: String) -> AnyCodable {
-        if method == "eth_sendTransaction" {
-            let tx = Stub.tx
-            return AnyCodable(tx)
-        } else if method == "personal_sign" {
-            return AnyCodable(["TestSign", address])
-        }
-        fatalError("not implemented")
-    }
-
-    fileprivate enum Stub {
-        static let tx = [Transaction(from: "0xf962d9666517Abd683b32342bC4DCDDEfd40546B",
-                                    to: "0x42b6fC88867383dDd507b40CD6E0DDe32C05891a",
-                                    data: "0x",
-                                    gas: "0x", // autofilled in wallet
-                                    gasPrice: "0x", // autofilled in wallet
-                                    value: "0x5AF3107A4000", // 0.0001eth
-                                    nonce: "0x" // autofilled in wallet
-                                    )]
     }
 }
 
