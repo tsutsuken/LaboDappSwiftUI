@@ -32,16 +32,16 @@ struct ContentView: View {
         }
     }
     
-    private func sendRequestPersonalSign() {
-        viewModel.walletManager.sendRequestPersonalSign()
+    private func personalSign() {
+        viewModel.walletManager.personalSign()
     }
     
-    private func sendRequestTransferEth() {
-        viewModel.walletManager.sendRequestTransferEth()
+    private func transferEth() {
+        viewModel.walletManager.transferEth()
     }
     
-    private func sendRequestTransferLinkToken() {
-        viewModel.transferChainLink()
+    private func transferLink() {
+        viewModel.transferLink()
     }
     
     private func disconnectWallet() {
@@ -56,18 +56,18 @@ struct ContentView: View {
                 })
                     .padding()
             } else {
-                Button("Send request personal_sign", action: {
-                    sendRequestPersonalSign()
+                Button("Personal sign", action: {
+                    personalSign()
                     showAlertRequestSent()
                 })
                     .padding()
-                Button("Send request transfer_eth", action: {
-                    sendRequestTransferEth()
+                Button("Transfer Eth", action: {
+                    transferEth()
                     showAlertRequestSent()
                 })
                     .padding()
-                Button("Send request transfer_link", action: {
-                    sendRequestTransferLinkToken()
+                Button("Transfer Link", action: {
+                    transferLink()
                     showAlertRequestSent()
                 })
                     .padding()

@@ -110,8 +110,8 @@ extension WalletManager {
         print("WalletManager sendTransaction: \(request)")
     }
     
-    public func sendRequestPersonalSign() {
-        print("WalletManager sendRequest")
+    public func personalSign() {
+        print("WalletManager personalSign")
         guard let session = session else {
             return
         }
@@ -127,8 +127,8 @@ extension WalletManager {
         print("WalletManager sendRequest: \(request)")
     }
     
-    public func sendRequestTransferEth() {
-        print("WalletManager sendRequestTransferEth")
+    public func transferEth() {
+        print("WalletManager transferEth")
         guard let address = address else {
             return
         }
