@@ -18,6 +18,6 @@ class ContentViewModel: ObservableObject {
     }
     
     public func transferLink() {
-        chainLinkRepository.transfer()
+        chainLinkRepository.transfer(amount: 1)
     }
 }
