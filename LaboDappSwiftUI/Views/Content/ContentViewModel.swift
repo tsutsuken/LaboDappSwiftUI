@@ -10,11 +10,11 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject {
     public let walletManager: WalletManager
-    private let chainLinkRepository: ChainLinkRepository
+    private let chainLinkRepository: ChainLinkRepositoryProtocol
     
     init(walletManager: WalletManager) {
         self.walletManager = walletManager
-        self.chainLinkRepository = ChainLinkRepositoryImpl(walletManager: walletManager)
+        self.chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
     }
     
     public func transferLink() {

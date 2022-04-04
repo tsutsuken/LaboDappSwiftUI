@@ -9,11 +9,11 @@ import Foundation
 import web3
 import BigInt
 
-protocol ChainLinkRepository {
+protocol ChainLinkRepositoryProtocol {
     func transfer(amount: UInt)
 }
 
-class ChainLinkRepositoryImpl: ChainLinkRepository {
+class ChainLinkRepository: ChainLinkRepositoryProtocol {
     let walletManager: WalletManager
     private let decimals = 18
     
