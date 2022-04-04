@@ -9,14 +9,18 @@ import Foundation
 import web3
 import BigInt
 
-class ChainLinkRepository {
+protocol ChainLinkRepository {
+    func transfer()
+}
+
+class ChainLinkRepositoryImpl: ChainLinkRepository {
     let walletManager: WalletManager
     
     init(walletManager: WalletManager) {
         self.walletManager = walletManager
     }
     
-    public func transfer() {
+    func transfer() {
         print("ChainLinkRepository transfer")
         guard let address = walletManager.address else {
             return

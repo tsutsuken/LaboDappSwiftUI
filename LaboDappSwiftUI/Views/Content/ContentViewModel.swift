@@ -14,7 +14,7 @@ class ContentViewModel: ObservableObject {
     
     init(walletManager: WalletManager) {
         self.walletManager = walletManager
-        self.chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
+        self.chainLinkRepository = ChainLinkRepositoryImpl(walletManager: walletManager)
     }
     
     public func transferLink() {
