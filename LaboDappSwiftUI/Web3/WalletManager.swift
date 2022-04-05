@@ -50,7 +50,6 @@ class WalletManager: ObservableObject {
         }
     }
     public let chainIds = Set([Chain.testnetRinkeby.chainId])
-    public let methods = Set(["eth_sendTransaction", "personal_sign"])
     private var selectedChainId: String {
         return Array(chainIds)[0]
     }
@@ -82,7 +81,7 @@ extension WalletManager {
     public func generateParingUri() throws -> String? {
         let permissions = Session.Permissions(
             blockchains: chainIds,
-            methods: methods,
+            methods: WalletConnectMethods.allMethodsSet(),
             notifications: []
         )
         return try client.connect(sessionPermissions: permissions)
@@ -103,7 +102,7 @@ extension WalletManager {
             return
         }
         
-        let method = "eth_sendTransaction"
+        let method = WalletConnectMethods.ethSendTransaction.rawValue
         let requestParams = AnyCodable([transaction])
         let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
         client.request(params: request)
@@ -120,7 +119,7 @@ extension WalletManager {
             return
         }
         
-        let method = "personal_sign"
+        let method = WalletConnectMethods.personalSign.rawValue
         let requestParams = AnyCodable(["TestMessage", address])
         let request = Request(topic: session.topic, method: method, params: requestParams, chainId: selectedChainId)
         client.request(params: request)
