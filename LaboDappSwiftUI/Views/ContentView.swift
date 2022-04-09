@@ -15,6 +15,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        RequestsView(walletManager: walletManager)
+        TabView() {
+            RequestsView(walletManager: walletManager)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "paperplane.fill")
+                        Text("Requests")
+                    }
+                }
+        }
+        
     }
 }
