@@ -1,14 +1,13 @@
 //
-//  ContentViewModel.swift
+//  RequestsViewModel.swift
 //  LaboDappSwiftUI
 //
-//  Created by Ken Tsutsumi on 2022/04/03.
+//  Created by Ken Tsutsumi on 2022/04/10.
 //
 
 import Foundation
-import SwiftUI
 
-class ContentViewModel: ObservableObject {
+class RequestsViewModel: ObservableObject {
     public let walletManager: WalletManager
     private let chainLinkRepository: ChainLinkRepositoryProtocol
     

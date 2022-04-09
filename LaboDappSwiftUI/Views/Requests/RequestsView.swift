@@ -1,18 +1,18 @@
 //
-//  ContentView.swift
+//  RequestsView.swift
 //  LaboDappSwiftUI
 //
-//  Created by Ken Tsutsumi on 2022/03/08.
+//  Created by Ken Tsutsumi on 2022/04/10.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    @StateObject private var viewModel: ContentViewModel
+struct RequestsView: View {
+    @StateObject private var viewModel: RequestsViewModel
     @State private var isShowingAlertRequestSent = false
     
     init(walletManager: WalletManager) {
-        let viewModel = ContentViewModel(walletManager: walletManager)
+        let viewModel = RequestsViewModel(walletManager: walletManager)
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
