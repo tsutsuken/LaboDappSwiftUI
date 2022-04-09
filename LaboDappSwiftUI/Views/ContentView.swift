@@ -23,6 +23,13 @@ struct ContentView: View {
                         Text("Requests")
                     }
                 }
+            ProfileView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.fill")
+                        Text("Profile")
+                    }
+                }
         }
         
     }
