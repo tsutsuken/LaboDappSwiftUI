@@ -49,38 +49,56 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            if viewModel.walletManager.session == nil {
-                Button("Copy paring uri", action: {
-                    copyParingUri()
-                })
-                    .padding()
-            } else {
-                Button("Personal sign", action: {
-                    personalSign()
-                    showAlertRequestSent()
-                })
-                    .padding()
-                Button("Transfer Eth", action: {
-                    transferEth()
-                    showAlertRequestSent()
-                })
-                    .padding()
-                Button("Transfer Link", action: {
-                    transferLink()
-                    showAlertRequestSent()
-                })
-                    .padding()
-                Button("Disconnect wallet", action: {
-                    disconnectWallet()
-                })
-                    .padding()
+        NavigationView {
+            VStack {
+                if viewModel.walletManager.session == nil {
+                    List {
+                        HStack {
+                            Text("Copy paring uri")
+                                .onTapGesture {
+                                    copyParingUri()
+                                }
+                        }
+                    }
+                    .navigationTitle("Connect To Wallet")
+                } else {
+                    List {
+                        HStack {
+                            Text("Personal sign")
+                                .onTapGesture {
+                                    personalSign()
+                                    showAlertRequestSent()
+                                }
+                        }
+                        HStack {
+                            Text("Transfer Eth")
+                                .onTapGesture {
+                                    transferEth()
+                                    showAlertRequestSent()
+                                }
+                        }
+                        HStack {
+                            Text("Transfer Link")
+                                .onTapGesture {
+                                    transferLink()
+                                    showAlertRequestSent()
+                                }
+                        }
+                        HStack {
+                            Text("Disconnect wallet")
+                                .onTapGesture {
+                                    disconnectWallet()
+                                }
+                        }
+                    }
+                    .navigationTitle("Requests")
+                    .alert(isPresented: $isShowingAlertRequestSent) {
+                        Alert(title: Text("Request sent"),
+                              message: Text("Confirm request on connected wallet")
+                        )
+                    }
+                }
             }
-        }
-        .alert(isPresented: $isShowingAlertRequestSent) {
-            Alert(title: Text("Request sent"),
-                  message: Text("Confirm request on connected wallet")
-            )
         }
     }
 }
