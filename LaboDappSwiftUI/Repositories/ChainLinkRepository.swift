@@ -23,7 +23,7 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
     
     func transfer(amount: UInt) {
         print("ChainLinkRepository transfer")
-        guard let address = walletManager.address else {
+        guard let address = walletManager.address() else {
             return
         }
         

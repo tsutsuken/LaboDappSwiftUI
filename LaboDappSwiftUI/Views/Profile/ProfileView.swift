@@ -21,7 +21,7 @@ struct ProfileView: View {
                 HStack {
                     Text("Address")
                         .bold()
-                    Text("\(viewModel.walletManager.address ?? "No Address")")
+                    Text("\(viewModel.walletManager.address() ?? "No Address")")
                 }
             }
             .navigationTitle("Profile")
