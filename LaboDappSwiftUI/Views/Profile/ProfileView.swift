@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ProfileView: View {
-    var body: some View {
-        Text("ProfileView")
+    @StateObject private var viewModel: ProfileViewModel
+    
+    init(walletManager: WalletManager) {
+        let viewModel = ProfileViewModel(walletManager: walletManager)
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+    
+    var body: some View {
+        NavigationView {
+            List {
+                HStack {
+                    Text("Address")
+                        .bold()
+                    Text("\(viewModel.walletManager.address ?? "No Address")")
+                }
+            }
+            .navigationTitle("Profile")
+        }
     }
 }

@@ -23,7 +23,7 @@ struct ContentView: View {
                         Text("Requests")
                     }
                 }
-            ProfileView()
+            ProfileView(walletManager: walletManager)
                 .tabItem {
                     VStack {
                         Image(systemName: "person.fill")
