@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct RequestsView: View {
-    @StateObject private var viewModel: RequestsViewModel
+    @StateObject private var walletManager: WalletManager
     @State private var isShowingAlertRequestSent = false
+    private let chainLinkRepository: ChainLinkRepositoryProtocol
     
     init(walletManager: WalletManager) {
-        let viewModel = RequestsViewModel(walletManager: walletManager)
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _walletManager = StateObject(wrappedValue: walletManager)
+        self.chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
     }
     
     private func showAlertRequestSent() {
@@ -23,7 +24,7 @@ struct RequestsView: View {
     private func copyParingUri() {
         print("copyParingUri")
         do {
-            if let uri = try viewModel.walletManager.generateParingUri() {
+            if let uri = try walletManager.generateParingUri() {
                 print("uri: \(uri)")
                 UIPasteboard.general.string = uri
             }
@@ -33,25 +34,25 @@ struct RequestsView: View {
     }
     
     private func personalSign() {
-        viewModel.walletManager.personalSign()
+        walletManager.personalSign()
     }
     
     private func transferEth() {
-        viewModel.walletManager.transferEth()
+        walletManager.transferEth()
     }
     
     private func transferLink() {
-        viewModel.transferLink()
+        chainLinkRepository.transfer(amount: 1)
     }
     
     private func disconnectWallet() {
-        viewModel.walletManager.disconnect()
+        walletManager.disconnect()
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.walletManager.session == nil {
+                if walletManager.session == nil {
                     List {
                         HStack {
                             Text("Copy paring uri")

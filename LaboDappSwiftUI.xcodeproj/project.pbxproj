@@ -10,7 +10,6 @@
 		BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */; };
 		BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860527FBE64200833985 /* WalletConnectMethods.swift */; };
 		BE4F860928023C7A00833985 /* RequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860828023C7A00833985 /* RequestsView.swift */; };
-		BE4F860B28023CDD00833985 /* RequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860A28023CDD00833985 /* RequestsViewModel.swift */; };
 		BE4F860E280243C000833985 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860D280243C000833985 /* ProfileView.swift */; };
 		BE50F17A27F4746900942EE6 /* web3.swift in Frameworks */ = {isa = PBXBuildFile; productRef = BE50F17927F4746900942EE6 /* web3.swift */; };
 		BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */; };
@@ -48,7 +47,6 @@
 		BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkRepository.swift; sourceTree = "<group>"; };
 		BE4F860527FBE64200833985 /* WalletConnectMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnectMethods.swift; sourceTree = "<group>"; };
 		BE4F860828023C7A00833985 /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
-		BE4F860A28023CDD00833985 /* RequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewModel.swift; sourceTree = "<group>"; };
 		BE4F860D280243C000833985 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BEC8FA8327D70FCD00106457 /* LaboDappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaboDappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -93,21 +91,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE4F860728023C3E00833985 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				BE4F860828023C7A00833985 /* RequestsView.swift */,
-				BE4F860A28023CDD00833985 /* RequestsViewModel.swift */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
 		BE50F17427F3CD5500942EE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
 				BE4F860D280243C000833985 /* ProfileView.swift */,
-				BE4F860728023C3E00833985 /* Requests */,
+				BE4F860828023C7A00833985 /* RequestsView.swift */,
 				BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */,
 			);
 			path = Views;
@@ -341,7 +330,6 @@
 				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
 				BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */,
 				BEC8FABF27DAD97600106457 /* Chain.swift in Sources */,
-				BE4F860B28023CDD00833985 /* RequestsViewModel.swift in Sources */,
 				BE4F860928023C7A00833985 /* RequestsView.swift in Sources */,
 				BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */,
 				BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */,
