@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject private var viewModel: ProfileViewModel
+    @StateObject private var walletManager: WalletManager
     
     init(walletManager: WalletManager) {
-        let viewModel = ProfileViewModel(walletManager: walletManager)
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _walletManager = StateObject(wrappedValue: walletManager)
     }
     
     var body: some View {
@@ -21,7 +20,7 @@ struct ProfileView: View {
                 HStack {
                     Text("Address")
                         .bold()
-                    Text("\(viewModel.walletManager.address() ?? "No Address")")
+                    Text("\(walletManager.address() ?? "No Address")")
                 }
             }
             .navigationTitle("Profile")
