@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var walletManager: WalletManager
-    
-    init(walletManager: WalletManager) {
-        _walletManager = StateObject(wrappedValue: walletManager)
-    }
+    @StateObject private var walletManager: WalletManager = WalletManager()
     
     var body: some View {
         TabView() {
@@ -31,6 +27,8 @@ struct ContentView: View {
                     }
                 }
         }
-        
+        .sheet(isPresented: $walletManager.shouldDisplayResponseView, onDismiss: {}, content: {
+            WalletResponseView(walletManager: walletManager)
+        })
     }
 }
