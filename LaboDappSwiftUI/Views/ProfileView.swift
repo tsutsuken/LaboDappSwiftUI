@@ -9,17 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.container) var container: Container
+    @State var isPresentedSheetConnectWallet = false
     
-    private func copyParingUri() {
-        print("copyParingUri")
-        do {
-            if let uri = try container.walletManager.generateParingUri() {
-                print("uri: \(uri)")
-                UIPasteboard.general.string = uri
-            }
-        } catch {
-            print("generateParingUri error: \(error)")
-        }
+    private func presentSheetConnectWallet() {
+        isPresentedSheetConnectWallet = true
     }
     
     private func disconnectWallet() {
@@ -31,9 +24,9 @@ struct ProfileView: View {
             List {
                 if container.walletManager.session == nil {
                     HStack {
-                        Text("Copy paring uri")
+                        Text("Connect wallet")
                             .onTapGesture {
-                                copyParingUri()
+                                presentSheetConnectWallet()
                             }
                     }
                 } else {
@@ -56,6 +49,9 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("Profile")
+            .sheet(isPresented: $isPresentedSheetConnectWallet, onDismiss: {}, content: {
+                ConnectWalletView()
+            })
         }
     }
 }
