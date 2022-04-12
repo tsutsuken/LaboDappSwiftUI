@@ -9,14 +9,14 @@ import SwiftUI
 import WalletConnect
 
 struct WalletResponseView: View {
-    @State var walletManager: WalletManager
+    @Environment(\.container) var container: Container
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(walletManager.unconfirmedResponses, id: \.topic) { response in
-                    let record = walletManager.getSessionRequestRecord(id: response.result.id)
-                    let responseJson = walletManager.sessionRequestResponse(record: record)
+                ForEach(container.walletManager.unconfirmedResponses, id: \.topic) { response in
+                    let record = container.walletManager.getSessionRequestRecord(id: response.result.id)
+                    let responseJson = container.walletManager.sessionRequestResponse(record: record)
                     
                     Text("Method: \(record?.request.method ?? "") \nResponse: \(responseJson)")
                 }

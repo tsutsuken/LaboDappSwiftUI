@@ -12,14 +12,14 @@ struct ContentView: View {
     
     var body: some View {
         TabView() {
-            RequestsView(walletManager: walletManager)
+            RequestsView()
                 .tabItem {
                     VStack {
                         Image(systemName: "paperplane.fill")
                         Text("Requests")
                     }
                 }
-            ProfileView(walletManager: walletManager)
+            ProfileView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person.fill")
@@ -29,7 +29,7 @@ struct ContentView: View {
         }
         .environment(\.container, Container.make(walletManager: walletManager))
         .sheet(isPresented: $walletManager.shouldDisplayResponseView, onDismiss: {}, content: {
-            WalletResponseView(walletManager: walletManager)
+            WalletResponseView()
         })
     }
 }

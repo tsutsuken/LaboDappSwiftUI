@@ -9,12 +9,7 @@ import SwiftUI
 
 struct RequestsView: View {
     @Environment(\.container) var container: Container
-    @StateObject private var walletManager: WalletManager
     @State private var isShowingAlertRequestSent = false
-    
-    init(walletManager: WalletManager) {
-        _walletManager = StateObject(wrappedValue: walletManager)
-    }
     
     private func showAlertRequestSent() {
         isShowingAlertRequestSent = true
@@ -23,7 +18,7 @@ struct RequestsView: View {
     private func copyParingUri() {
         print("copyParingUri")
         do {
-            if let uri = try walletManager.generateParingUri() {
+            if let uri = try container.walletManager.generateParingUri() {
                 print("uri: \(uri)")
                 UIPasteboard.general.string = uri
             }
@@ -33,11 +28,11 @@ struct RequestsView: View {
     }
     
     private func personalSign() {
-        walletManager.personalSign()
+        container.walletManager.personalSign()
     }
     
     private func transferEth() {
-        walletManager.transferEth()
+        container.walletManager.transferEth()
     }
     
     private func transferLink() {
@@ -45,13 +40,13 @@ struct RequestsView: View {
     }
     
     private func disconnectWallet() {
-        walletManager.disconnect()
+        container.walletManager.disconnect()
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                if walletManager.session == nil {
+                if container.walletManager.session == nil {
                     List {
                         HStack {
                             Text("Copy paring uri")
