@@ -13,6 +13,12 @@ protocol ChainLinkRepositoryProtocol {
     func transfer(amount: UInt)
 }
 
+struct ChainLinkRepositoryStub: ChainLinkRepositoryProtocol {
+    func transfer(amount: UInt) {
+        print("ChainLinkRepositoryStub transfer amount: \(amount)")
+    }
+}
+
 class ChainLinkRepository: ChainLinkRepositoryProtocol {
     let walletManager: WalletManager
     private let decimals = 18

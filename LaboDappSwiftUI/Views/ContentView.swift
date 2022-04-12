@@ -27,6 +27,7 @@ struct ContentView: View {
                     }
                 }
         }
+        .environment(\.container, Container.make(walletManager: walletManager))
         .sheet(isPresented: $walletManager.shouldDisplayResponseView, onDismiss: {}, content: {
             WalletResponseView(walletManager: walletManager)
         })

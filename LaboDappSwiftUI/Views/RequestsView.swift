@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct RequestsView: View {
+    @Environment(\.container) var container: Container
     @StateObject private var walletManager: WalletManager
     @State private var isShowingAlertRequestSent = false
-    private let chainLinkRepository: ChainLinkRepositoryProtocol
     
     init(walletManager: WalletManager) {
         _walletManager = StateObject(wrappedValue: walletManager)
-        self.chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
     }
     
     private func showAlertRequestSent() {
@@ -42,7 +41,7 @@ struct RequestsView: View {
     }
     
     private func transferLink() {
-        chainLinkRepository.transfer(amount: 1)
+        container.repositories.chainLinkRepository.transfer(amount: 1)
     }
     
     private func disconnectWallet() {
