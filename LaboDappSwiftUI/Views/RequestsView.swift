@@ -31,12 +31,7 @@ struct RequestsView: View {
         NavigationView {
             VStack {
                 if container.walletManager.session == nil {
-                    List {
-                        HStack {
-                            Text("Wallet not connected")
-                        }
-                    }
-                    .navigationTitle("Requests")
+                    Text("Wallet not connected")
                 } else {
                     List {
                         HStack {
@@ -61,7 +56,6 @@ struct RequestsView: View {
                                 }
                         }
                     }
-                    .navigationTitle("Requests")
                     .alert(isPresented: $isShowingAlertRequestSent) {
                         Alert(title: Text("Request sent"),
                               message: Text("Confirm request on connected wallet")
@@ -69,6 +63,7 @@ struct RequestsView: View {
                     }
                 }
             }
+            .navigationTitle("Requests")
         }
     }
 }
