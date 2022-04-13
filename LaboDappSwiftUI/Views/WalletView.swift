@@ -25,6 +25,19 @@ struct WalletView: View {
         UIPasteboard.general.string = address
     }
     
+    private func openEtherscan() {
+        guard let address = container.walletManager.address() else {
+            return
+        }
+        
+        let urlEtherscanRinkeby = "https://rinkeby.etherscan.io/address/\(address)"
+        guard let url = URL(string: urlEtherscanRinkeby) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
     private func disconnectWallet() {
         container.walletManager.disconnect()
     }
@@ -52,6 +65,15 @@ struct WalletView: View {
                                 presentCopyDoneAlert()
                             }
                             .alert("Copied address", isPresented: $isPresentedCopyDoneAlert, actions: {})
+                            HStack {
+                                Image(systemName: "eye.fill")
+                                Text("View on Etherscan")
+                                Spacer()
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                openEtherscan()
+                            }
                             HStack {
                                 Text("Disconnect wallet")
                                     .foregroundColor(.red)
