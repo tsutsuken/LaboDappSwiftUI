@@ -11,6 +11,7 @@ struct ConnectWalletView: View {
     @Environment(\.container) var container: Container
     @State private var paringUri: String = ""
     @State private var isPresentedErrorAlert = false
+    @State private var isPresentedCopyDoneAlert = false
     
     private func onAppear() {
         self.paringUri = createParingUri()
@@ -37,6 +38,10 @@ struct ConnectWalletView: View {
         UIPasteboard.general.string = paringUri
     }
     
+    private func presentCopyDoneAlert() {
+        isPresentedCopyDoneAlert = true
+    }
+    
     private func presentErrorAlert() {
         isPresentedErrorAlert = true
     }
@@ -50,6 +55,7 @@ struct ConnectWalletView: View {
                         .padding()
                     Button(action: {
                         copyParingUri()
+                        presentCopyDoneAlert()
                     }, label: {
                         HStack {
                             Text(paringUri)
@@ -60,6 +66,7 @@ struct ConnectWalletView: View {
                     })
                         .buttonStyle(.bordered)
                         .padding(.horizontal, 24)
+                        .alert("Copied Paring URI", isPresented: $isPresentedCopyDoneAlert, actions: {})
                 } else {
                     Text("Wallet connected!")
                 }
