@@ -75,7 +75,9 @@ struct WalletView: View {
                                 openEtherscan()
                             }
                             HStack {
-                                Text("Disconnect wallet")
+                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                                    .foregroundColor(.red)
+                                Text("Logout")
                                     .foregroundColor(.red)
                                 Spacer()
                             }
