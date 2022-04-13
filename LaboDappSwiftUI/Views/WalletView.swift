@@ -10,9 +10,19 @@ import SwiftUI
 struct WalletView: View {
     @Environment(\.container) var container: Container
     @State var isPresentedSheetConnectWallet = false
+    @State private var isPresentedCopyDoneAlert = false
     
     private func presentSheetConnectWallet() {
         isPresentedSheetConnectWallet = true
+    }
+    
+    private func presentCopyDoneAlert() {
+        isPresentedCopyDoneAlert = true
+    }
+    
+    private func copyAddress() {
+        let address = container.walletManager.address()
+        UIPasteboard.general.string = address
     }
     
     private func disconnectWallet() {
@@ -31,6 +41,17 @@ struct WalletView: View {
                 } else {
                     List {
                         Section(content: {
+                            HStack {
+                                Image(systemName: "doc.on.doc")
+                                Text("Copy address")
+                                Spacer()
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                copyAddress()
+                                presentCopyDoneAlert()
+                            }
+                            .alert("Copied address", isPresented: $isPresentedCopyDoneAlert, actions: {})
                             HStack {
                                 Text("Disconnect wallet")
                                     .foregroundColor(.red)
