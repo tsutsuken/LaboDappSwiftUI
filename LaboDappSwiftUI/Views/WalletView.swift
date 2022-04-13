@@ -55,9 +55,11 @@ struct WalletView: View {
                             HStack {
                                 Text("Disconnect wallet")
                                     .foregroundColor(.red)
-                                    .onTapGesture {
-                                        disconnectWallet()
-                                    }
+                                Spacer()
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                disconnectWallet()
                             }
                         }, header: {
                             Text("\(container.walletManager.address() ?? "No Address")")
