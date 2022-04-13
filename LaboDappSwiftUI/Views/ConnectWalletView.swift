@@ -10,6 +10,7 @@ import SwiftUI
 struct ConnectWalletView: View {
     @Environment(\.container) var container: Container
     @State private var paringUri: String = ""
+    @State private var isPresentedErrorAlert = false
     
     private func onAppear() {
         self.paringUri = createParingUri()
@@ -21,9 +22,12 @@ struct ConnectWalletView: View {
             if let uri = try container.walletManager.generateParingUri() {
                 print("paring uri: \(uri)")
                 paringUri = uri
+            } else {
+                presentErrorAlert()
             }
         } catch {
-            print("generateParingUri error: \(error)")
+            presentErrorAlert()
+            print("createParingUri error: \(error)")
         }
         return paringUri
     }
@@ -31,6 +35,10 @@ struct ConnectWalletView: View {
     private func copyParingUri() {
         print("copy paring uri: \(paringUri)")
         UIPasteboard.general.string = paringUri
+    }
+    
+    private func presentErrorAlert() {
+        isPresentedErrorAlert = true
     }
     
     var body: some View {
@@ -60,6 +68,9 @@ struct ConnectWalletView: View {
         }
         .onAppear(perform: {
             onAppear()
+        })
+        .alert("Connecting Wallet Error", isPresented: $isPresentedErrorAlert, actions: {}, message: {
+            Text("Please restart the app")
         })
     }
 }
