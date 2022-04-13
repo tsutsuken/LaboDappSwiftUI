@@ -10,7 +10,7 @@
 		BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */; };
 		BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860527FBE64200833985 /* WalletConnectMethods.swift */; };
 		BE4F860928023C7A00833985 /* RequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860828023C7A00833985 /* RequestsView.swift */; };
-		BE4F860E280243C000833985 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860D280243C000833985 /* ProfileView.swift */; };
+		BE4F860E280243C000833985 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860D280243C000833985 /* WalletView.swift */; };
 		BE4F86122804E5C000833985 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F86112804E5C000833985 /* Container.swift */; };
 		BE4F8615280501C200833985 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8614280501C200833985 /* Repositories.swift */; };
 		BE4F861728052C7900833985 /* ConnectWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F861628052C7900833985 /* ConnectWalletView.swift */; };
@@ -50,7 +50,7 @@
 		BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkRepository.swift; sourceTree = "<group>"; };
 		BE4F860527FBE64200833985 /* WalletConnectMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnectMethods.swift; sourceTree = "<group>"; };
 		BE4F860828023C7A00833985 /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
-		BE4F860D280243C000833985 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BE4F860D280243C000833985 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		BE4F86112804E5C000833985 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		BE4F8614280501C200833985 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		BE4F861628052C7900833985 /* ConnectWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectWalletView.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC8FA8827D70FCD00106457 /* ContentView.swift */,
-				BE4F860D280243C000833985 /* ProfileView.swift */,
+				BE4F860D280243C000833985 /* WalletView.swift */,
 				BE4F860828023C7A00833985 /* RequestsView.swift */,
 				BE4F861628052C7900833985 /* ConnectWalletView.swift */,
 				BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */,
@@ -353,7 +353,7 @@
 				BE4F860928023C7A00833985 /* RequestsView.swift in Sources */,
 				BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */,
 				BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */,
-				BE4F860E280243C000833985 /* ProfileView.swift in Sources */,
+				BE4F860E280243C000833985 /* WalletView.swift in Sources */,
 				BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

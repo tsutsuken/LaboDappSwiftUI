@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  WalletView.swift
 //  LaboDappSwiftUI
 //
 //  Created by Ken Tsutsumi on 2022/04/10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct WalletView: View {
     @Environment(\.container) var container: Container
     @State var isPresentedSheetConnectWallet = false
     
@@ -48,7 +48,7 @@ struct ProfileView: View {
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Wallet")
             .sheet(isPresented: $isPresentedSheetConnectWallet, onDismiss: {}, content: {
                 ConnectWalletView()
             })
