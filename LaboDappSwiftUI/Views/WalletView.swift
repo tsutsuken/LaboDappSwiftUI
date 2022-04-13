@@ -21,30 +21,31 @@ struct WalletView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            VStack {
                 if container.walletManager.session == nil {
-                    HStack {
-                        Text("Connect wallet")
-                            .onTapGesture {
-                                presentSheetConnectWallet()
-                            }
-                    }
+                    Button("Connect wallet", action: {
+                        presentSheetConnectWallet()
+                    })
+                        .buttonStyle(.bordered)
+                        .padding(.horizontal, 24)
                 } else {
-                    Section {
-                        HStack {
-                            Text("Address")
-                                .bold()
+                    List {
+                        Section(content: {
+                            HStack {
+                                Text("Disconnect wallet")
+                                    .foregroundColor(.red)
+                                    .onTapGesture {
+                                        disconnectWallet()
+                                    }
+                            }
+                        }, header: {
                             Text("\(container.walletManager.address() ?? "No Address")")
-                        }
-                    }
-                    Section {
-                        HStack {
-                            Text("Disconnect wallet")
-                                .foregroundColor(.red)
-                                .onTapGesture {
-                                    disconnectWallet()
-                                }
-                        }
+                                .font(.headline)
+                                .lineLimit(1)
+                                .truncationMode(.middle)
+                                .padding()
+
+                        })
                     }
                 }
             }
