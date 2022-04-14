@@ -23,10 +23,6 @@ struct RequestsView: View {
         container.walletManager.transferEth()
     }
     
-    private func transferLink() {
-        container.repositories.chainLinkRepository.transfer(amount: 1)
-    }
-    
     var body: some View {
         NavigationView {
             VStack {

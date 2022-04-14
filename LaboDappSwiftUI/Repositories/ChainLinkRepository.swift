@@ -10,12 +10,12 @@ import web3
 import BigInt
 
 protocol ChainLinkRepositoryProtocol {
-    func transfer(amount: UInt)
+    func transfer(toAddress: String, amount: UInt)
 }
 
 struct ChainLinkRepositoryStub: ChainLinkRepositoryProtocol {
-    func transfer(amount: UInt) {
-        print("ChainLinkRepositoryStub transfer amount: \(amount)")
+    func transfer(toAddress: String, amount: UInt) {
+        print("ChainLinkRepositoryStub transfer toAddress: \(toAddress), amount: \(amount)")
     }
 }
 
@@ -27,7 +27,7 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
         self.walletManager = walletManager
     }
     
-    func transfer(amount: UInt) {
+    func transfer(toAddress: String, amount: UInt) {
         print("ChainLinkRepository transfer")
         guard let address = walletManager.address() else {
             return
@@ -39,7 +39,7 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
         let chainLinkAddressRinkeby = "0x01BE23585060835E02B77ef475b0Cc51aA1e0709"
         let function = ERC20Functions.transfer(contract: EthereumAddress(chainLinkAddressRinkeby),
                                                from: EthereumAddress(address),
-                                               to: EthereumAddress("0x42b6fC88867383dDd507b40CD6E0DDe32C05891a"),
+                                               to: EthereumAddress(toAddress),
                                                value: poweredAmount)
         guard let transactionData = try? function.transaction().data else {
             return

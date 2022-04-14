@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TransferLinkRequestView: View {
     @Environment(\.container) var container: Container
+    @State private var sendToAddress: String = ""
     @State private var amount: UInt = 0
     @State private var isShowingAlertRequestSent = false
     
-    private func transferLink(amount: UInt) {
-        container.repositories.chainLinkRepository.transfer(amount: amount)
+    private func transferLink(toAddress: String, amount: UInt) {
+        container.repositories.chainLinkRepository.transfer(toAddress: toAddress, amount: amount)
     }
     
     private func showAlertRequestSent() {
@@ -24,6 +25,14 @@ struct TransferLinkRequestView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Text("Send to")
+                        .padding(.leading, 24)
+                    TextField("0x42b6fC88867383dDd507b40CD6E0DDe32C05891a", text: $sendToAddress)
+                        .textFieldStyle(.roundedBorder)
+                        .keyboardType(.alphabet)
+                        .padding()
+                }
+                HStack {
                     Text("Amount")
                         .padding(.leading, 24)
                     TextField("Amount", value: $amount, format: .number)
@@ -32,7 +41,7 @@ struct TransferLinkRequestView: View {
                         .padding()
                 }
                 Button("Send request", action: {
-                    transferLink(amount: amount)
+                    transferLink(toAddress: sendToAddress, amount: amount)
                     showAlertRequestSent()
                 })
                     .buttonStyle(.bordered)
