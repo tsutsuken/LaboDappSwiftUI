@@ -48,12 +48,10 @@ struct RequestsView: View {
                                     showAlertRequestSent()
                                 }
                         }
-                        HStack {
-                            Text("Transfer Link")
-                                .onTapGesture {
-                                    transferLink()
-                                    showAlertRequestSent()
-                                }
+                        NavigationLink(destination: TransferLinkRequestView()) {
+                            HStack {
+                                Text("Transfer Link")
+                            }
                         }
                     }
                     .alert(isPresented: $isShowingAlertRequestSent) {
