@@ -108,6 +108,14 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		BE4F861E2809789300833985 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE50F17527F3CD6300942EE6 /* Wallet */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		BE50F17427F3CD5500942EE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +129,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BE50F17527F3CD6300942EE6 /* Web3 */ = {
+		BE50F17527F3CD6300942EE6 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
 				BEC8FAB727D8395C00106457 /* WalletManager.swift */,
 				BE4F860527FBE64200833985 /* WalletConnectMethods.swift */,
 			);
-			path = Web3;
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 		BE50F17C27F92CF200942EE6 /* Repositories */ = {
@@ -163,10 +171,10 @@
 			children = (
 				BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */,
 				BE50F17427F3CD5500942EE6 /* Views */,
-				BEC8FAB927D97C1200106457 /* Models */,
 				BE4F86132804FA4100833985 /* DI */,
+				BEC8FAB927D97C1200106457 /* Models */,
 				BE50F17C27F92CF200942EE6 /* Repositories */,
-				BE50F17527F3CD6300942EE6 /* Web3 */,
+				BE4F861E2809789300833985 /* Utilities */,
 				BEC8FA8A27D70FCE00106457 /* Assets.xcassets */,
 				BEC8FA8C27D70FCE00106457 /* Preview Content */,
 			);
