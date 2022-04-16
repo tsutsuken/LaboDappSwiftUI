@@ -13,9 +13,9 @@ import web3
 import BigInt
 
 class WalletManager: ObservableObject {
-    @Published private(set) var client: WalletConnectClient
     @Published private(set) var session: Session?
     @Published private(set) var unconfirmedResponses = [Response]()
+    private(set) var client: WalletConnectClient
     public var shouldDisplayResponseView: Bool {
         get {
             let shouldDisplay = unconfirmedResponses.count > 0
