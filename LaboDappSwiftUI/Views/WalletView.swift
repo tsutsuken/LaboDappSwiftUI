@@ -103,3 +103,9 @@ struct WalletView: View {
         }
     }
 }
+
+struct WalletView_Preview: PreviewProvider {
+    static var previews: some View {
+        WalletView()
+    }
+}
