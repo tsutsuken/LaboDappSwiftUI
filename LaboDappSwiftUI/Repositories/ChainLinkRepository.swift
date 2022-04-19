@@ -45,7 +45,7 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
             return
         }
         
-        let transaction = Transaction(from: "0xf962d9666517Abd683b32342bC4DCDDEfd40546B",
+        let transaction = Transaction(from: address,
                                       to: chainLinkAddressRinkeby, // set contract address
                                       data: transactionData.web3.hexString
         )
