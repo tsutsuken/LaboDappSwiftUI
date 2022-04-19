@@ -19,7 +19,8 @@ struct Container: EnvironmentKey {
     
     static func make(walletManager: WalletManager) -> Container {
         let chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
-        let repositories = Repositories(chainLinkRepository: chainLinkRepository)
+        let purposeRepository = PurposeRepository(walletManager: walletManager)
+        let repositories = Repositories(chainLinkRepository: chainLinkRepository, purposeRepository: purposeRepository)
         let container = Container(walletManager: walletManager, repositories: repositories)
         return container
     }
