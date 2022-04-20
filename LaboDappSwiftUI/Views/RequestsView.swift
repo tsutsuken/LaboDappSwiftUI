@@ -49,11 +49,6 @@ struct RequestsView: View {
                                 Text("Transfer Link")
                             }
                         }
-                        NavigationLink(destination: SetPurposeRequestView()) {
-                            HStack {
-                                Text("Set Purpose")
-                            }
-                        }
                     }
                     .alert(isPresented: $isShowingAlertRequestSent) {
                         Alert(title: Text("Request sent"),
