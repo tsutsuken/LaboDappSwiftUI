@@ -17,6 +17,11 @@ struct PurposeView: View {
                     Text("Wallet not connected")
                 } else {
                     List {
+                        NavigationLink(destination: GetPurposeView()) {
+                            HStack {
+                                Text("Get Purpose")
+                            }
+                        }
                         NavigationLink(destination: SetPurposeRequestView()) {
                             HStack {
                                 Text("Set Purpose")

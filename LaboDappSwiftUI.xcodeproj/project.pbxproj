@@ -18,6 +18,9 @@
 		BE4F8621280D4BD100833985 /* PurposeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8620280D4BD100833985 /* PurposeRepository.swift */; };
 		BE4F8623280E341300833985 /* SetPurposeRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8622280E341300833985 /* SetPurposeRequestView.swift */; };
 		BE4F8625280F8A8F00833985 /* PurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8624280F8A8E00833985 /* PurposeView.swift */; };
+		BE4F8627280FA20D00833985 /* GetPurposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8626280FA20D00833985 /* GetPurposeView.swift */; };
+		BE4F8629280FE2B300833985 /* WalletManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F8628280FE2B300833985 /* WalletManagerError.swift */; };
+		BE4F862B280FE31D00833985 /* EthereumClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F862A280FE31D00833985 /* EthereumClientError.swift */; };
 		BE50F17A27F4746900942EE6 /* web3.swift in Frameworks */ = {isa = PBXBuildFile; productRef = BE50F17927F4746900942EE6 /* web3.swift */; };
 		BEC8FA8727D70FCD00106457 /* LaboDappSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */; };
 		BEC8FA8927D70FCD00106457 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA8827D70FCD00106457 /* ContentView.swift */; };
@@ -62,6 +65,9 @@
 		BE4F8620280D4BD100833985 /* PurposeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeRepository.swift; sourceTree = "<group>"; };
 		BE4F8622280E341300833985 /* SetPurposeRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPurposeRequestView.swift; sourceTree = "<group>"; };
 		BE4F8624280F8A8E00833985 /* PurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeView.swift; sourceTree = "<group>"; };
+		BE4F8626280FA20D00833985 /* GetPurposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPurposeView.swift; sourceTree = "<group>"; };
+		BE4F8628280FE2B300833985 /* WalletManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManagerError.swift; sourceTree = "<group>"; };
+		BE4F862A280FE31D00833985 /* EthereumClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumClientError.swift; sourceTree = "<group>"; };
 		BEC8FA8327D70FCD00106457 /* LaboDappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaboDappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIApp.swift; sourceTree = "<group>"; };
 		BEC8FA8827D70FCD00106457 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		BE4F862C280FE37100833985 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				BE4F8628280FE2B300833985 /* WalletManagerError.swift */,
+				BE4F862A280FE31D00833985 /* EthereumClientError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		BE50F17427F3CD5500942EE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +144,7 @@
 				BE4F860D280243C000833985 /* WalletView.swift */,
 				BE4F860828023C7A00833985 /* RequestsView.swift */,
 				BE4F8624280F8A8E00833985 /* PurposeView.swift */,
+				BE4F8626280FA20D00833985 /* GetPurposeView.swift */,
 				BE4F861C2806B2E200833985 /* TransferLinkRequestView.swift */,
 				BE4F8622280E341300833985 /* SetPurposeRequestView.swift */,
 				BE4F861628052C7900833985 /* ConnectWalletView.swift */,
@@ -220,6 +236,7 @@
 			children = (
 				BEC8FABA27D97C2200106457 /* Transaction.swift */,
 				BEC8FABE27DAD97600106457 /* Chain.swift */,
+				BE4F862C280FE37100833985 /* Errors */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,10 +387,13 @@
 				BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */,
 				BE4F8625280F8A8F00833985 /* PurposeView.swift in Sources */,
 				BE4F861728052C7900833985 /* ConnectWalletView.swift in Sources */,
+				BE4F862B280FE31D00833985 /* EthereumClientError.swift in Sources */,
 				BE4F8615280501C200833985 /* Repositories.swift in Sources */,
+				BE4F8629280FE2B300833985 /* WalletManagerError.swift in Sources */,
 				BE4F8621280D4BD100833985 /* PurposeRepository.swift in Sources */,
 				BEC8FABF27DAD97600106457 /* Chain.swift in Sources */,
 				BE4F860928023C7A00833985 /* RequestsView.swift in Sources */,
+				BE4F8627280FA20D00833985 /* GetPurposeView.swift in Sources */,
 				BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */,
 				BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */,
 				BE4F860E280243C000833985 /* WalletView.swift in Sources */,
