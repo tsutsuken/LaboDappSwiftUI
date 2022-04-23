@@ -1,5 +1,5 @@
 //
-//  PurposeView.swift
+//  YourContractView.swift
 //  LaboDappSwiftUI
 //
 //  Created by Ken Tsutsumi on 2022/04/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PurposeView: View {
+struct YourContractView: View {
     @Environment(\.container) var container: Container
     
     var body: some View {
@@ -30,13 +30,13 @@ struct PurposeView: View {
                     }
                 }
             }
-            .navigationTitle("Purpose")
+            .navigationTitle("YourContract")
         }
     }
 }
 
-struct PurposeView_Previews: PreviewProvider {
+struct YourContractView_Previews: PreviewProvider {
     static var previews: some View {
-        PurposeView()
+        YourContractView()
     }
 }

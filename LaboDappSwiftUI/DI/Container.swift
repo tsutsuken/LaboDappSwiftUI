@@ -22,8 +22,8 @@ struct Container: EnvironmentKey {
     static func make(walletManager: WalletManager) -> Container {
         let ethereumClient = EthereumClient(url: URL(string: ethereumRpcUrl)!)
         let chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
-        let purposeRepository = PurposeRepository(walletManager: walletManager ,ethereumClient: ethereumClient)
-        let repositories = Repositories(chainLinkRepository: chainLinkRepository, purposeRepository: purposeRepository)
+        let yourContractRepository = YourContractRepository(walletManager: walletManager ,ethereumClient: ethereumClient)
+        let repositories = Repositories(chainLinkRepository: chainLinkRepository, yourContractRepository: yourContractRepository)
         let container = Container(walletManager: walletManager, repositories: repositories)
         return container
     }

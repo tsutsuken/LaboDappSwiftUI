@@ -9,7 +9,7 @@ import Foundation
 import web3
 import BigInt
 
-enum PurposeFunction {
+enum YourContractFunction {
     public struct getPurpose: ABIFunction {
         public static let name = "purpose"
         public let gasPrice: BigUInt?

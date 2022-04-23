@@ -10,15 +10,15 @@ import Foundation
 extension Container {
     struct Repositories {
         let chainLinkRepository: ChainLinkRepositoryProtocol
-        let purposeRepository: PurposeRepositoryProtocol
+        let yourContractRepository: YourContractRepositoryProtocol
         
-        init(chainLinkRepository: ChainLinkRepositoryProtocol, purposeRepository: PurposeRepositoryProtocol) {
+        init(chainLinkRepository: ChainLinkRepositoryProtocol, yourContractRepository: YourContractRepositoryProtocol) {
             self.chainLinkRepository = chainLinkRepository
-            self.purposeRepository = purposeRepository
+            self.yourContractRepository = yourContractRepository
         }
         
         static var stub: Repositories {
-            self.init(chainLinkRepository: ChainLinkRepositoryStub(), purposeRepository: PurposeRepositoryStub())
+            self.init(chainLinkRepository: ChainLinkRepositoryStub(), yourContractRepository: YourContractRepositoryStub())
         }
     }
 }

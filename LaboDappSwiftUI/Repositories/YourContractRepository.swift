@@ -1,5 +1,5 @@
 //
-//  PurposeRepository.swift
+//  YourContractRepository.swift
 //  LaboDappSwiftUI
 //
 //  Created by Ken Tsutsumi on 2022/04/18.
@@ -9,24 +9,26 @@ import Foundation
 import web3
 import BigInt
 
-protocol PurposeRepositoryProtocol {
+protocol YourContractRepositoryProtocol {
     func purpose() async throws -> String
     func setPurpose(purpose: String)
 }
 
-struct PurposeRepositoryStub: PurposeRepositoryProtocol {
+struct YourContractRepositoryStub: YourContractRepositoryProtocol {
     func purpose() async throws -> String {
         return "stub purpose"
     }
     func setPurpose(purpose: String) {
-        print("PurposeRepositoryStub setPurpose: \(purpose)")
+        print("YourContractRepositoryStub setPurpose: \(purpose)")
     }
 }
 
-struct PurposeRepository: PurposeRepositoryProtocol {
+struct YourContractRepository: YourContractRepositoryProtocol {
     private let walletManager: WalletManager
     private let ethereumClient: EthereumClient
-    let contractAddressRinkeby = "0x05211F6B121DD6f507aE72a2882787949eb43153"
+    let contractAddressRinkeby = "0xfde6518EdF58c508c87c4A1aEb97C1f031608cfe"
+    // Contract info on Etherscan
+    // https://rinkeby.etherscan.io/address/0xfde6518EdF58c508c87c4A1aEb97C1f031608cfe
     
     init(walletManager: WalletManager, ethereumClient: EthereumClient) {
         self.walletManager = walletManager
@@ -34,14 +36,14 @@ struct PurposeRepository: PurposeRepositoryProtocol {
     }
     
     func purpose() async throws -> String {
-        print("PurposeRepository purpose")
+        print("YourContractRepository purpose")
         guard let address = walletManager.address() else {
             throw WalletManagerError.addressError
         }
         
-        let function = PurposeFunction.getPurpose(contract: EthereumAddress(contractAddressRinkeby),
+        let function = YourContractFunction.getPurpose(contract: EthereumAddress(contractAddressRinkeby),
                                                    from: EthereumAddress(address))
-        guard let response = try? await function.call(withClient: ethereumClient, responseType: PurposeResponse.purposeResponse.self) else {
+        guard let response = try? await function.call(withClient: ethereumClient, responseType: YourContractResponse.purposeResponse.self) else {
             throw EthereumClientError.callError
         }
         
@@ -50,12 +52,12 @@ struct PurposeRepository: PurposeRepositoryProtocol {
     }
     
     func setPurpose(purpose: String) {
-        print("PurposeRepository setPurpose: \(purpose)")
+        print("YourContractRepository setPurpose: \(purpose)")
         guard let address = walletManager.address() else {
             return
         }
         
-        let function = PurposeFunction.setPurpose(contract: EthereumAddress(contractAddressRinkeby),
+        let function = YourContractFunction.setPurpose(contract: EthereumAddress(contractAddressRinkeby),
                                                    from: EthereumAddress(address),
                                                    purpose: purpose)
         guard let transactionData = try? function.transaction().data else {

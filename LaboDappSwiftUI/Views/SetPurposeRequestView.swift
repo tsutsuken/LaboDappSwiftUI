@@ -13,7 +13,7 @@ struct SetPurposeRequestView: View {
     @State private var isPresentedRequestSentAlert = false
     
     private func setPurpose(purpose: String) {
-        container.repositories.purposeRepository.setPurpose(purpose: purpose)
+        container.repositories.yourContractRepository.setPurpose(purpose: purpose)
     }
     
     private func presentRequestSentAlert() {

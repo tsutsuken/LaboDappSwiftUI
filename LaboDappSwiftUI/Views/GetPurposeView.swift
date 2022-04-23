@@ -12,7 +12,7 @@ struct GetPurposeView: View {
     @State private var purpose = ""
     
     private func fetchPurpose() async {
-        guard let purpose = try? await container.repositories.purposeRepository.purpose() else {
+        guard let purpose = try? await container.repositories.yourContractRepository.purpose() else {
             return
         }
         self.purpose = purpose

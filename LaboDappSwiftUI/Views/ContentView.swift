@@ -19,11 +19,11 @@ struct ContentView: View {
                         Text("Requests")
                     }
                 }
-            PurposeView()
+            YourContractView()
                 .tabItem {
                     VStack {
                         Image(systemName: "doc.text.fill")
-                        Text("Purpose")
+                        Text("YourContract")
                     }
                 }
             WalletView()
