@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkRepository.swift; sourceTree = "<group>"; };
+		BE31ABC728E95AF500ACE1C7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE31ABC828E978CD00ACE1C7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		BE4F860527FBE64200833985 /* WalletConnectMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnectMethods.swift; sourceTree = "<group>"; };
 		BE4F860828023C7A00833985 /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 		BEC8FA7A27D70FCD00106457 = {
 			isa = PBXGroup;
 			children = (
+				BE31ABC728E95AF500ACE1C7 /* README.md */,
 				BE63DFA128E980D700320F45 /* .xcode-version */,
 				BEC8FA8527D70FCD00106457 /* LaboDappSwiftUI */,
 				BEC8FA9627D70FCF00106457 /* LaboDappSwiftUITests */,
