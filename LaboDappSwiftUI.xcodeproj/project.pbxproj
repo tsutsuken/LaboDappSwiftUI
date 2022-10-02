@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */; };
+		BE31ABC928E978CD00ACE1C7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE31ABC828E978CD00ACE1C7 /* AppConstants.swift */; };
 		BE4F860627FBE64200833985 /* WalletConnectMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860527FBE64200833985 /* WalletConnectMethods.swift */; };
 		BE4F860928023C7A00833985 /* RequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860828023C7A00833985 /* RequestsView.swift */; };
 		BE4F860E280243C000833985 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F860D280243C000833985 /* WalletView.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		BE1F8AC527F92D7500098F03 /* ChainLinkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkRepository.swift; sourceTree = "<group>"; };
+		BE31ABC828E978CD00ACE1C7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		BE4F860527FBE64200833985 /* WalletConnectMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnectMethods.swift; sourceTree = "<group>"; };
 		BE4F860828023C7A00833985 /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
 		BE4F860D280243C000833985 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		BE4F861E2809789300833985 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BE31ABC828E978CD00ACE1C7 /* AppConstants.swift */,
 				BE50F17527F3CD6300942EE6 /* Wallet */,
 			);
 			path = Utilities;
@@ -399,6 +402,7 @@
 				BE4F86122804E5C000833985 /* Container.swift in Sources */,
 				BE1F8AC627F92D7500098F03 /* ChainLinkRepository.swift in Sources */,
 				BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */,
+				BE31ABC928E978CD00ACE1C7 /* AppConstants.swift in Sources */,
 				BE4F8623280E341300833985 /* SetPurposeRequestView.swift in Sources */,
 				BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */,
 				BE4F8625280F8A8F00833985 /* YourContractView.swift in Sources */,

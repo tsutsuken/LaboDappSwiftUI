@@ -44,7 +44,7 @@ class WalletManager: ObservableObject {
             description: "description",
             url: "wallet.connect",
             icons: ["https://gblobscdn.gitbook.com/spaces%2F-LJJeCjcLrr53DcT1Ml7%2Favatar.png?alt=media"])
-        let relayer = Relayer(relayHost: "relay.walletconnect.com", projectId: "a0a2645554ae53fbbce8dceb8fe3ea06")
+        let relayer = Relayer(relayHost: "relay.walletconnect.com", projectId: AppConstants.walletConnectProjectId)
         self.client = WalletConnectClient(metadata: metadata, relayer: relayer)
         client.delegate = self
         

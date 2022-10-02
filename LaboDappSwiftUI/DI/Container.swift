@@ -12,7 +12,6 @@ import web3
 struct Container: EnvironmentKey {
     let walletManager: WalletManager
     let repositories: Repositories
-    static private let ethereumRpcUrl = "https://eth-rinkeby.alchemyapi.io/v2/ir0s0Edh0BEmt9rO-uv0sVjObYGUQGka"
     
     init(walletManager: WalletManager, repositories: Repositories) {
         self.walletManager = walletManager
@@ -20,7 +19,7 @@ struct Container: EnvironmentKey {
     }
     
     static func make(walletManager: WalletManager) -> Container {
-        let ethereumClient = EthereumClient(url: URL(string: ethereumRpcUrl)!)
+        let ethereumClient = EthereumClient(url: URL(string: AppConstants.rpcUrlRinkeby)!)
         let chainLinkRepository = ChainLinkRepository(walletManager: walletManager)
         let yourContractRepository = YourContractRepository(walletManager: walletManager ,ethereumClient: ethereumClient)
         let repositories = Repositories(chainLinkRepository: chainLinkRepository, yourContractRepository: yourContractRepository)
