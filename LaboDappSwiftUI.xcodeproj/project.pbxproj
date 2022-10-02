@@ -32,11 +32,11 @@
 		BEC8FA9827D70FCF00106457 /* LaboDappSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FA9727D70FCF00106457 /* LaboDappSwiftUITests.swift */; };
 		BEC8FAA227D70FCF00106457 /* LaboDappSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAA127D70FCF00106457 /* LaboDappSwiftUIUITests.swift */; };
 		BEC8FAA427D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAA327D70FCF00106457 /* LaboDappSwiftUIUITestsLaunchTests.swift */; };
-		BEC8FAB227D7103400106457 /* WalletConnect in Frameworks */ = {isa = PBXBuildFile; productRef = BEC8FAB127D7103400106457 /* WalletConnect */; };
 		BEC8FAB827D8395C00106457 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FAB727D8395C00106457 /* WalletManager.swift */; };
 		BEC8FABB27D97C2200106457 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABA27D97C2200106457 /* Transaction.swift */; };
 		BEC8FABD27D9A1E300106457 /* WalletResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABC27D9A1E300106457 /* WalletResponseView.swift */; };
 		BEC8FABF27DAD97600106457 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8FABE27DAD97600106457 /* Chain.swift */; };
+		BEF495A828E9A10C00A86940 /* WalletConnect in Frameworks */ = {isa = PBXBuildFile; productRef = BEF495A728E9A10C00A86940 /* WalletConnect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF495A828E9A10C00A86940 /* WalletConnect in Frameworks */,
 				BE50F17A27F4746900942EE6 /* web3.swift in Frameworks */,
-				BEC8FAB227D7103400106457 /* WalletConnect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +279,8 @@
 			);
 			name = LaboDappSwiftUI;
 			packageProductDependencies = (
-				BEC8FAB127D7103400106457 /* WalletConnect */,
 				BE50F17927F4746900942EE6 /* web3.swift */,
+				BEF495A728E9A10C00A86940 /* WalletConnect */,
 			);
 			productName = LaboDappSwiftUI;
 			productReference = BEC8FA8327D70FCD00106457 /* LaboDappSwiftUI.app */;
@@ -355,8 +355,8 @@
 			);
 			mainGroup = BEC8FA7A27D70FCD00106457;
 			packageReferences = (
-				BEC8FAB027D7103400106457 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */,
 				BE50F17827F4746900942EE6 /* XCRemoteSwiftPackageReference "web3" */,
+				BEF495A628E9A10C00A86940 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */,
 			);
 			productRefGroup = BEC8FA8427D70FCD00106457 /* Products */;
 			projectDirPath = "";
@@ -759,12 +759,12 @@
 				version = 0.9.3;
 			};
 		};
-		BEC8FAB027D7103400106457 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */ = {
+		BEF495A628E9A10C00A86940 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WalletConnect/WalletConnectSwiftV2";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 0.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -775,9 +775,9 @@
 			package = BE50F17827F4746900942EE6 /* XCRemoteSwiftPackageReference "web3" */;
 			productName = web3.swift;
 		};
-		BEC8FAB127D7103400106457 /* WalletConnect */ = {
+		BEF495A728E9A10C00A86940 /* WalletConnect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BEC8FAB027D7103400106457 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */;
+			package = BEF495A628E9A10C00A86940 /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */;
 			productName = WalletConnect;
 		};
 /* End XCSwiftPackageProductDependency section */

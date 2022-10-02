@@ -13,7 +13,7 @@
 - Swift 5
 - SwiftUI
 - Swift Package Manager
-- WalletConnect
+- WalletConnect 0.5.0
 - web3.swift 0.9.3
 
 ## 機能一覧
