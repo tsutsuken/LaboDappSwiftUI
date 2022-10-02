@@ -72,6 +72,7 @@
 		BE4F862A280FE31D00833985 /* EthereumClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumClientError.swift; sourceTree = "<group>"; };
 		BE4F863328125DBB00833985 /* YourContractFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourContractFunction.swift; sourceTree = "<group>"; };
 		BE4F863528125E1600833985 /* YourContractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourContractResponse.swift; sourceTree = "<group>"; };
+		BE63DFA128E980D700320F45 /* .xcode-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".xcode-version"; sourceTree = "<group>"; };
 		BEC8FA8327D70FCD00106457 /* LaboDappSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaboDappSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC8FA8627D70FCD00106457 /* LaboDappSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboDappSwiftUIApp.swift; sourceTree = "<group>"; };
 		BEC8FA8827D70FCD00106457 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,6 +188,7 @@
 		BEC8FA7A27D70FCD00106457 = {
 			isa = PBXGroup;
 			children = (
+				BE63DFA128E980D700320F45 /* .xcode-version */,
 				BEC8FA8527D70FCD00106457 /* LaboDappSwiftUI */,
 				BEC8FA9627D70FCF00106457 /* LaboDappSwiftUITests */,
 				BEC8FAA027D70FCF00106457 /* LaboDappSwiftUIUITests */,
