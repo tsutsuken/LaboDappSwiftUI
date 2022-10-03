@@ -1,6 +1,8 @@
 #  LaboDappSwiftUI
 
 ## 概要
+Ethereum上のスマートコントラクトにアクセスするためのアプリです。  
+Wallet Connect v2を利用して、Ethereumに接続します。  
 
 ## ビルド準備
 - AppConstants.swiftに、自身で取得したAPIKeyを入力する
