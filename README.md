@@ -21,3 +21,21 @@
 - WalletConnectを利用して、Ethereumアドレスに接続
 - Ethereum上のスマートコントラクトのgetメソッドを呼び出す
 - Ethereum上のスマートコントラクトのsetメソッドを呼び出す
+
+## 接続先コントラクト情報 YourContract
+- ネットワーク
+  - Ethereum(Goerli)
+- コントラクトのアドレス
+  - 0x488521020C3FF1CBC687D291e333cA029E671c0A
+- コントラクトのページ(etherscan)
+  - https://goerli.etherscan.io/address/0x488521020C3FF1CBC687D291e333cA029E671c0A
+  
+## 接続先コントラクト情報 ChainLink
+- ネットワーク
+  - Ethereum(Goerli)
+- コントラクトのアドレス
+  - 0x326C977E6efc84E512bB9C30f76E30c160eD06FB
+- コントラクトのページ(etherscan)
+  - https://goerli.etherscan.io/token/0x326C977E6efc84E512bB9C30f76E30c160eD06FB
+
+
