@@ -30,8 +30,8 @@ struct WalletView: View {
             return
         }
         
-        let urlEtherscanRinkeby = "https://rinkeby.etherscan.io/address/\(address)"
-        guard let url = URL(string: urlEtherscanRinkeby) else {
+        let urlEtherscanGoerli = "https://goerli.etherscan.io/address/\(address)"
+        guard let url = URL(string: urlEtherscanGoerli) else {
             return
         }
         

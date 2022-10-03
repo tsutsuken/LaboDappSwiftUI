@@ -26,9 +26,9 @@ struct YourContractRepositoryStub: YourContractRepositoryProtocol {
 struct YourContractRepository: YourContractRepositoryProtocol {
     private let walletManager: WalletManager
     private let ethereumClient: EthereumClient
-    let contractAddressRinkeby = "0xfde6518EdF58c508c87c4A1aEb97C1f031608cfe"
+    let contractAddressGoerli = "0x488521020C3FF1CBC687D291e333cA029E671c0A"
     // Contract info on Etherscan
-    // https://rinkeby.etherscan.io/address/0xfde6518EdF58c508c87c4A1aEb97C1f031608cfe
+    // https://goerli.etherscan.io/address/0x488521020C3FF1CBC687D291e333cA029E671c0A
     
     init(walletManager: WalletManager, ethereumClient: EthereumClient) {
         self.walletManager = walletManager
@@ -41,7 +41,7 @@ struct YourContractRepository: YourContractRepositoryProtocol {
             throw WalletManagerError.addressError
         }
         
-        let function = YourContractFunction.getPurpose(contract: EthereumAddress(contractAddressRinkeby),
+        let function = YourContractFunction.getPurpose(contract: EthereumAddress(contractAddressGoerli),
                                                    from: EthereumAddress(address))
         guard let response = try? await function.call(withClient: ethereumClient, responseType: YourContractResponse.purposeResponse.self) else {
             throw EthereumClientError.callError
@@ -57,7 +57,7 @@ struct YourContractRepository: YourContractRepositoryProtocol {
             return
         }
         
-        let function = YourContractFunction.setPurpose(contract: EthereumAddress(contractAddressRinkeby),
+        let function = YourContractFunction.setPurpose(contract: EthereumAddress(contractAddressGoerli),
                                                    from: EthereumAddress(address),
                                                    purpose: purpose)
         guard let transactionData = try? function.transaction().data else {
@@ -65,7 +65,7 @@ struct YourContractRepository: YourContractRepositoryProtocol {
         }
 
         let transaction = Transaction(from: address,
-                                      to: contractAddressRinkeby, // set contract address
+                                      to: contractAddressGoerli, // set contract address
                                       data: transactionData.web3.hexString
         )
         walletManager.sendTransaction(transaction: transaction)

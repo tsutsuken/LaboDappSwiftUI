@@ -31,7 +31,7 @@ class WalletManager: ObservableObject {
             }
         }
     }
-    public let chainIds = Set([Chain.testnetRinkeby.chainId])
+    public let chainIds = Set([Chain.testnetGoerli.chainId])
     private var selectedChainId: String {
         return Array(chainIds)[0]
     }

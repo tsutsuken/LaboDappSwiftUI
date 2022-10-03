@@ -36,8 +36,8 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
         // power the amount by decimals
         let poweredAmount = BigUInt(amount) * BigUInt(10).power(18)
         
-        let chainLinkAddressRinkeby = "0x01BE23585060835E02B77ef475b0Cc51aA1e0709"
-        let function = ERC20Functions.transfer(contract: EthereumAddress(chainLinkAddressRinkeby),
+        let chainLinkAddressGoerli = "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
+        let function = ERC20Functions.transfer(contract: EthereumAddress(chainLinkAddressGoerli),
                                                from: EthereumAddress(address),
                                                to: EthereumAddress(toAddress),
                                                value: poweredAmount)
@@ -46,7 +46,7 @@ class ChainLinkRepository: ChainLinkRepositoryProtocol {
         }
         
         let transaction = Transaction(from: address,
-                                      to: chainLinkAddressRinkeby, // set contract address
+                                      to: chainLinkAddressGoerli, // set contract address
                                       data: transactionData.web3.hexString
         )
         walletManager.sendTransaction(transaction: transaction)

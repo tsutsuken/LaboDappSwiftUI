@@ -10,8 +10,7 @@ import Foundation
 enum Chain {
     case mainnetEthereum
     case mainnetPolygon
-    case testnetRopsten
-    case testnetRinkeby
+    case testnetGoerli
     
     var chainId: String {
         switch self {
@@ -19,10 +18,8 @@ enum Chain {
             return "eip155:1"
         case .mainnetPolygon:
             return "eip155:137"
-        case .testnetRopsten:
-            return "eip155:3"
-        case .testnetRinkeby:
-            return "eip155:4"
+        case .testnetGoerli:
+            return "eip155:5"
         }
     }
 }
